@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-spa-beige: #FCF7F2; /* Lighter cream/beige from image */
+  --color-spa-peach: #E19A7D; /* Salmon/Peach from buttons in image */
+  --color-spa-cream: #F8F1EB;
+  --color-spa-gold: #C5A059;
+  --color-spa-dark: #3E3B39; /* Darker grey/brown for text */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-spa-beige text-spa-dark font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-spa-dark;
+  }
+}
+
+.serif {
+  font-family: var(--font-serif);
+}
+
+.luxury-card {
+  @apply bg-white border border-spa-cream p-4 shadow-sm transition-all duration-500 hover:shadow-lg;
+}
+
+.btn-primary {
+  @apply bg-spa-peach text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:bg-spa-peach/90 active:scale-95;
+}
+
+.btn-outline {
+  @apply border border-spa-peach text-spa-peach px-8 py-3 rounded-full font-medium transition-all duration-300 hover:bg-spa-peach hover:text-white active:scale-95;
+}
